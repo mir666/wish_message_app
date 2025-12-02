@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1045639578206",
+    "project_id": "wish-message",
+    "storage_bucket": "wish-message.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1045639578206:android:da1b6435f729711b0e2acf",
+        "android_client_info": {
+          "package_name": "com.example.wish_message_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZ1ZsbVbEprG7aCoHLRFCFtPZ0n0xm7p8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
