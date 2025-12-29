@@ -1,65 +1,56 @@
 import 'package:flutter/material.dart';
-import 'package:like_button/like_button.dart';
-import 'package:wish_message_app/app/app_colors.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:wish_message_app/features/common/message_controller.dart';
+import 'package:wish_message_app/features/common/sms_model.dart';
 
-class ReadSms extends StatelessWidget {
-  const ReadSms({
-    super.key,
-    required this.message,
-    required this.favoriteButton,
-    required this.shareButton,
-    required this.copyButton,
-  });
 
-  final String message;
-  final void Function() favoriteButton;
-  final void Function() shareButton;
-  final void Function() copyButton;
+class WishMessageCard extends StatelessWidget {
+  final WishMessage message;
+  final controller = Get.find<MessageController>();
+
+
+  WishMessageCard({super.key, required this.message});
+
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Card(
-          color: Colors.white,
-          child: SizedBox(
-            child: Padding(
-              padding: const EdgeInsets.all(12),
-              child: Column(
-                children: [
-                  SelectableText(message, style: TextStyle(fontSize: 16)),
-                  SizedBox(height: 8),
-                  Divider(color: AppColors.dividerColor),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      LikeButton(
-                        size: 40,
-                        likeBuilder: (bool isLiked) {
-                          return Icon(
-                            Icons.favorite,
-                            size: 25,
-                            color: isLiked ? Colors.red : Colors.grey,
-                          );
-                        },
-                      ),
-                      TextButton(
-                        onPressed: shareButton,
-                        child: Icon(Icons.share_outlined, size: 20),
-                      ),
-                      TextButton(
-                        onPressed: copyButton,
-                        child: Icon(Icons.copy, size: 20),
-                      ),
-                    ],
+    return Card(
+      margin: const EdgeInsets.all(10),
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(message.text, style: const TextStyle(fontSize: 16)),
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                IconButton(
+                  icon: Icon(
+                    message.isFavorite ? Icons.favorite : Icons.favorite_border,
+                    color: message.isFavorite ? Colors.red : Colors.grey,
                   ),
-                ],
-              ),
-            ),
-          ),
+                  onPressed: () => controller.toggleFavorite(message),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.share),
+                  onPressed: () => SharePlus.instance.share(ShareParams(text: message.text)),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.copy),
+                  onPressed: () {
+                    Clipboard.setData(ClipboardData(text: message.text));
+                    Get.snackbar('Copied', "Message Copy");
+                  },
+                ),
+              ],
+            )
+          ],
         ),
-        SizedBox(height: 10),
-      ],
+      ),
     );
   }
 }

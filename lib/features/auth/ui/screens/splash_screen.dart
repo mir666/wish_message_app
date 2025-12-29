@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFFF9FCFF), Color(0xFFA9D1FF)],
+            colors: [Color(0xFF9FCDFF), Color(0xFFA9D1FD)],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -43,17 +43,16 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Center(
             child: Column(
               children: [
-                SizedBox(height: 100),
+                SizedBox(height: 60),
                 Column(
                   children: [
                     Text('শুভেচ্ছা বার্তা',
                       style: TextStyle(
-                        fontSize: 36,
+                        fontSize: 40,
                         fontWeight: FontWeight.w600,
                         color: AppColors.splashTitleColor,
                       ),
                     ),
-                    SizedBox(height: 12),
                     Text('শুভেচ্ছাকে সুন্দরভাবে সংযুক্ত করা',
                       style: TextStyle(
                           color: AppColors.splashSubTitleColor,
@@ -65,16 +64,20 @@ class _SplashScreenState extends State<SplashScreen> {
                 Spacer(),
                 Column(
                   children: [
-                    SvgPicture.asset(AssetsPath.logoSvg, width: 90),
+                    SvgPicture.asset(AssetsPath.appLogo, width: 150,),
                     SizedBox(height: 32),
-                    CircularProgressIndicator(),
+                    CircularProgressIndicator(color: Colors.lightBlue,),
                   ],
                 ),
                 Spacer(),
-                Text('ভার্সন ${AppConfig.currentAppVersion}',
-                  style: TextStyle(
-                    color: AppColors.splashVersionColor,
-                  ),
+                Wrap(
+                  children: [
+                    Text('ভার্সন ${AppConfig.currentAppVersion}',
+                      style: TextStyle(
+                        color: AppColors.splashSubTitleColor,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
