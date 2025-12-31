@@ -5,7 +5,7 @@ class HelperAds {
   static String get bannerAdsUnit{
     if(Platform.isAndroid){
 
-      return 'ca-app-pub-3940256099942544/6300978111';
+      return 'ca-app-pub-7621160977966543/8607215969';
     }else{
       throw UnsupportedError('Unsupported platform');
     }
@@ -13,7 +13,7 @@ class HelperAds {
   static String get interstitialAdsUnit{
     if(Platform.isAndroid){
 
-      return 'ca-app-pub-3940256099942544/1033173712';
+      return 'ca-app-pub-7621160977966543/3472925892';
     }else{
       throw UnsupportedError('Unsupported platform');
     }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wish_message_app/app/app_colors.dart';
+import 'package:wish_message_app/app/app_config.dart';
 import 'package:wish_message_app/core/privacy_policy_screen.dart';
 import 'package:wish_message_app/features/common/favorite/favorite_sms_screen.dart';
 import 'package:wish_message_app/features/home/ui/widget/drawer_header_section.dart';
@@ -62,7 +63,7 @@ class DrawerSection extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(12),
             child: Text(
-              'Version 1.0.0',
+              'ভার্সন্ন ${AppConfig.currentAppVersion}',
               style: TextStyle(fontSize: 12, color: Colors.grey),
             ),
           ),

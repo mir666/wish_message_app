@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class PrivacyPolicyScreen extends StatelessWidget {
   const PrivacyPolicyScreen({super.key});
 
@@ -14,112 +13,143 @@ class PrivacyPolicyScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 32),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Message Content', style: textTheme.titleLarge),
-                  SizedBox(height: 16),
-                  Text(
-                    'All wish messages shown in the app are publicly available content, collected from the internet (e.g., quotes, wishes, greetings).We do not claim ownership of these messages.The app does not track which messages you view, save, share, or mark as favorite.',
-                    style: textTheme.titleMedium,
-                  ),
-                ],
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // App Info
+            Text(
+              'This Privacy Policy applies to the "Eid Wish 2026" mobile application developed by Global Computer.',
+              style: textTheme.titleMedium,
+            ),
+
+            const SizedBox(height: 24),
+
+            // Message Content
+            Text('Message Content', style: textTheme.titleLarge),
+            const SizedBox(height: 12),
+            Text(
+              'All wish messages shown in the app are publicly available content collected from the internet (such as quotes, wishes, and greetings). We do not claim ownership of these messages. The app does not track which messages you view, save, share, or mark as favorite.',
+              style: textTheme.bodyMedium,
+            ),
+
+            const SizedBox(height: 24),
+
+            // Information We Collect
+            Text('Information We Collect', style: textTheme.titleLarge),
+            const SizedBox(height: 12),
+            Text(
+              'We do not collect personal information such as your name, email address, phone number, or precise location.\n\nWe may collect anonymous, non-personal data such as device type, app version, crash reports, and basic usage statistics through third-party analytics services.',
+              style: textTheme.bodyMedium,
+            ),
+
+            const SizedBox(height: 24),
+
+            // How We Use Information
+            Text('How We Use Information', style: textTheme.titleLarge),
+            const SizedBox(height: 12),
+            Text('We use non-personal data only for the following purposes:', style: textTheme.bodyMedium),
+            const SizedBox(height: 8),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Text('• Improving app stability'),
+                Text('• Fixing bugs and crashes'),
+                Text('• Enhancing overall user experience'),
+                Text('• Analytics (e.g., Firebase Analytics)'),
+              ],
+            ),
+
+            const SizedBox(height: 24),
+
+            // Third-Party Services
+            Text('Third-Party Services', style: textTheme.titleLarge),
+            const SizedBox(height: 12),
+            Text(
+              'Our app may use third-party services that may collect information used to identify you. These services include:',
+              style: textTheme.bodyMedium,
+            ),
+            const SizedBox(height: 8),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Text('• Google AdMob (Advertisements)'),
+                Text('• Firebase Analytics'),
+                Text('• Firebase Crashlytics'),
+              ],
+            ),
+            const SizedBox(height: 8),
+            InkWell(
+              onTap: () => {},
+              child: Text(
+                'Learn more about how Google handles data: https://policies.google.com/privacy',
+                style: textTheme.bodyMedium?.copyWith(
+                  color: Colors.blue,
+                  decoration: TextDecoration.underline,
+                ),
               ),
-              SizedBox(height: 16),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('How We Use Information', style: textTheme.titleLarge),
-                  SizedBox(height: 16),
-                  Text(
-                    'We use non-personal data only for:',
-                    style: textTheme.titleMedium,
-                  ),
-                  SizedBox(height: 8),
-                  Text(
-                    '1.Improving app stability',
-                    style: textTheme.titleMedium,
-                  ),
-                  Text(
-                    '2.Fixing bugs',
-                    style: textTheme.titleMedium,
-                  ),
-                  Text(
-                    '3.Enhancing user experience',
-                    style: textTheme.titleMedium,
-                  ),
-                  Text(
-                    '4.Analytics (e.g., Firebase Analytics / Google Analytics)',
-                    style: textTheme.titleMedium,
-                  ),
-                ],
+            ),
+
+            const SizedBox(height: 24),
+
+            // Advertisement Policy
+            Text('Advertisement Policy', style: textTheme.titleLarge),
+            const SizedBox(height: 12),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Text('• Ads may be displayed in the app through Google AdMob.'),
+                Text('• Ads may use anonymous device identifiers (such as Android Advertising ID) to improve ad relevance.'),
+                Text('• Users can opt out of personalized ads through their device settings.'),
+              ],
+            ),
+
+            const SizedBox(height: 24),
+
+            // Children Privacy
+            Text('Children’s Privacy', style: textTheme.titleLarge),
+            const SizedBox(height: 12),
+            Text(
+              'This app does not target children under the age of 13. We do not knowingly collect any personal information from children.',
+              style: textTheme.bodyMedium,
+            ),
+
+            const SizedBox(height: 24),
+
+            // Changes
+            Text('Changes to This Privacy Policy', style: textTheme.titleLarge),
+            const SizedBox(height: 12),
+            Text(
+              'We may update our Privacy Policy from time to time. Any changes will be posted on this page. You are advised to review this page periodically for any updates.',
+              style: textTheme.bodyMedium,
+            ),
+
+            const SizedBox(height: 24),
+
+            // Contact Us
+            Text('Contact Us', style: textTheme.titleLarge),
+            const SizedBox(height: 12),
+            Text(
+              'If you have any questions or suggestions about our Privacy Policy, please contact us at:',
+              style: textTheme.bodyMedium,
+            ),
+            const SizedBox(height: 8),
+            Text(
+              '📧 Email: farhanaakter10506264robi@gmail.com',
+              style: textTheme.bodyMedium?.copyWith(color: Colors.blue),
+            ),
+
+            const SizedBox(height: 32),
+            Center(
+              child: Text(
+                '© 2025 Eid Wish 2026. All rights reserved.',
+                style: textTheme.bodySmall,
               ),
-              SizedBox(height: 16),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Third-Party Services', style: textTheme.titleLarge),
-                  SizedBox(height: 16),
-                  Text(
-                    'Our app may use third-party tools such as:',
-                    style: textTheme.titleMedium,
-                  ),
-                  SizedBox(height: 8),
-                  Text(
-                    '1.Google AdMob (Advertisements)',
-                    style: textTheme.titleMedium,
-                  ),
-                  Text(
-                    '2.Firebase Analytics',
-                    style: textTheme.titleMedium,
-                  ),
-                  Text(
-                    '3.Crashlytics',
-                    style: textTheme.titleMedium,
-                  ),
-                ],
-              ),
-              SizedBox(height: 16),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Advertisement Policy', style: textTheme.titleLarge),
-                  SizedBox(height: 16),
-                  Text(
-                    '1.Ads may be shown in the app through Google AdMob.',
-                    style: textTheme.titleMedium,
-                  ),
-                  Text(
-                    '2.Ads may use anonymous device identifiers (e.g., Android Advertising ID) to improve ad relevance.',
-                    style: textTheme.titleMedium,
-                  ),
-                  Text(
-                    '3.Users can disable ad personalization from device settings.   ',
-                    style: textTheme.titleMedium,
-                  ),
-                ],
-              ),
-              SizedBox(height: 16),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Children’s Privacy', style: textTheme.titleLarge),
-                  SizedBox(height: 16),
-                  Text(
-                    'This app does not target children under 13 and does not knowingly collect data from children.',
-                    style: textTheme.titleMedium,
-                  ),
-                ],
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
   }
+
 }
